@@ -1,0 +1,10 @@
+const express=require('express')
+const app=express()
+const body=require('body-parser')
+app.use(body.json())
+app.use(body.urlencoded({extended:false}))
+const router=require('./home')
+app.use('/home',router)
+app.listen(3000,()=>{
+    console.log('server start')
+})
